@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="turtlesim" type="turtlesim_node" name="kame1"/>
+    <node pkg="second_turtlesim_controller" type="second_turtlesim_controller" name="mykame" output="screen">
+        <param name="max" value="3.0" type="double"/>
+        <param name="min" value="0.0" type="double"/>
+        <!-- <param name="init_x" value="5.54444" type="double"/> -->
+        <!-- <param name="init_y" value="5.54444" type="double"/> -->
+        <!-- <param name="init_theta" value="0.0" type="double"/> -->
+        <param name="polygon" value="3" type="int"/>
+    </node>
+</launch>
