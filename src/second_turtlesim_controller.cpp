@@ -49,7 +49,7 @@ void SecondTurtlesimController::process()
 {
     current_pose_.x = 5.54444;
     current_pose_.y = 5.54444;
-    corner_ = M_PI - ((n_ - 2.0)*M_PI) / n_;
+    corner_ = 2.0*M_PI / n_;
     length_max_ = sqrt(2*r_*r_ - 2*r_*r_*cos(corner_));
 
     ros::Rate loop_rate(hz_);

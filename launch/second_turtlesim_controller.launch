@@ -3,7 +3,7 @@
     <node pkg="turtlesim" type="turtlesim_node" name="kame1"/>
     <node pkg="second_turtlesim_controller" type="second_turtlesim_controller" name="mykame" output="screen">
         <param name="hz" value="100" type="int"/>
-        <param name="n" value="12" type="int"/>
+        <param name="n" value="6" type="int"/>
         <param name="r" value="2" type="int"/>
     </node>
 </launch>
