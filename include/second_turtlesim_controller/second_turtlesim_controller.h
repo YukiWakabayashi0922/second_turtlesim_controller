@@ -18,7 +18,7 @@ class SecondTurtlesimController
         void straight();                       //直進
         void turn();                           //回転
         void stop();                           //停止
-        double normalize_angle(double angle);  //正規化
+        double normalize_angle(double angle);
 
         // launchファイルで指定するパラメータ
         int hz_;
@@ -36,8 +36,8 @@ class SecondTurtlesimController
 
         ros::NodeHandle nh_;
         ros::NodeHandle private_nh_;
-        ros::Publisher pub_cmd_vel_;
-        ros::Subscriber sub_pose_;
+        ros::Publisher cmd_vel_pub_;
+        ros::Subscriber pose_sub_;
 
         turtlesim::Pose current_pose_;
         geometry_msgs::Twist cmd_vel_;

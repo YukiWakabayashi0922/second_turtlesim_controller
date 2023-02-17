@@ -6,8 +6,8 @@ SecondTurtlesimController::SecondTurtlesimController():private_nh_("~")
     private_nh_.param("n", n_, {0});
     private_nh_.param("r", r_, {0});
 
-    pub_cmd_vel_ = nh_.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 10);
-    sub_pose_ = nh_.subscribe("/turtle1/pose", 10, &SecondTurtlesimController::pose_callback, this);
+    cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 10);
+    pose_sub_ = nh_.subscribe("/turtle1/pose", 10, &SecondTurtlesimController::pose_callback, this);
 }
 
 void SecondTurtlesimController::pose_callback(const turtlesim::Pose::ConstPtr &msg)
@@ -19,21 +19,21 @@ void SecondTurtlesimController::straight()
 {
     cmd_vel_.linear.x = 1.5;
     cmd_vel_.angular.z = 0.0;
-    pub_cmd_vel_.publish(cmd_vel_);
+    cmd_vel_pub_.publish(cmd_vel_);
 }
 
 void SecondTurtlesimController::turn()
 {
     cmd_vel_.linear.x = 0.0;
     cmd_vel_.angular.z = M_PI/2;
-    pub_cmd_vel_.publish(cmd_vel_);
+    cmd_vel_pub_.publish(cmd_vel_);
 }
 
 void SecondTurtlesimController::stop()
 {
     cmd_vel_.linear.x = 0.0;
     cmd_vel_.angular.z = 0.0;
-    pub_cmd_vel_.publish(cmd_vel_);
+    cmd_vel_pub_.publish(cmd_vel_);
 }
 
 double SecondTurtlesimController::normalize_angle(double angle)
