@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <launch>
+    <arg name="input_n" default="4"/>
     <node pkg="turtlesim" type="turtlesim_node" name="kame1"/>
     <node pkg="second_turtlesim_controller" type="second_turtlesim_controller" name="mykame" output="screen">
-        <param name="hz" value="100" type="int"/>
-        <param name="n" value="6" type="int"/>
-        <param name="r" value="2" type="int"/>
+        <param name="hz" value="100"/>
+        <param name="n" value="$(arg input_n)"/>
+        <param name="r" value="2"/>
     </node>
 </launch>

@@ -15,24 +15,24 @@ class SecondTurtlesimController
     private:
         void pose_callback(const turtlesim::Pose::ConstPtr &msg);
 
-        void straight();                       //直進
-        void turn();                           //回転
-        void stop();                           //停止
+        void straight();                       // 直進
+        void turn();                           // 回転
+        void stop();                           // 停止
+        void run();                            // process()で実行する関数
         double normalize_angle(double angle);
 
-        // launchファイルで指定するパラメータ
         int hz_;
-        int n_;  //角の個数
-        int r_;  //外接円の半径
+        int n_;  // 角の個数
+        int r_;  // 外接円の半径
 
-        int count_ = 0;
-        double theta_ = 0.0;
-        double theta_max_ = 0.0;
-        double init_x_ = 5.54444;
-        double init_y_ = 5.54444;
-        double length_ = 0.0;
-        double length_max_ = 0.0;
-        double corner_ = 0.0;
+        int count_;
+        double theta_;
+        double theta_max_;
+        double init_x_;
+        double init_y_;
+        double length_;
+        double length_max_;
+        double theta_base_;
 
         ros::NodeHandle nh_;
         ros::NodeHandle private_nh_;
