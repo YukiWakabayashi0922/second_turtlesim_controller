@@ -4,7 +4,7 @@ SecondTurtlesimController::SecondTurtlesimController():private_nh_("~")
 {
     private_nh_.param("hz", hz_, {100});
     private_nh_.param("n", n_, {4});
-    private_nh_.param("r", r_, {2});
+    private_nh_.param("r", r_, {3});
 
     count_ = 0;
     theta_ = 0.0;
